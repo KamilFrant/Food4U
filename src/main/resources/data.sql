@@ -32,10 +32,10 @@ VALUES
     (6, 'Niepodległości 42/13, Lublin 20-003', '123654789', 'IN_PROGRESS'),
     (7, 'Racławicka 11/1, Lublin 20-002', '774411225', 'IN_PROGRESS'),
     (8, 'Łęczyńska 22/6, Lublin 20-008', '885664227', 'IN_PROGRESS'),
-    (9, 'Zamojska 74/1, Lublin 20-001', '514726598', 'COMPLETE'),
-    (10, 'Długa 54, Lublin 20-003', '556554211', 'COMPLETE'),
-    (11, 'Hutnicza 31/3, Lublin 20-003', '547125439', 'COMPLETE'),
-    (12, 'Głęboka 8/15, Lublin 20-002', '660330880', 'COMPLETE');
+    (9, 'Zamojska 74/1, Lublin 20-001', '514726598', 'DELIVERED'),
+    (10, 'Długa 54, Lublin 20-003', '556554211', 'DELIVERED'),
+    (11, 'Hutnicza 31/3, Lublin 20-003', '547125439', 'DELIVERED'),
+    (12, 'Głęboka 8/15, Lublin 20-002', '660330880', 'DELIVERED');
 
 INSERT INTO
     order_item (order_id, item_id)
