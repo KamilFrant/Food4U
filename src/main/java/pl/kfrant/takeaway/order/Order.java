@@ -5,7 +5,7 @@ import pl.kfrant.takeaway.dish.Dish;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PrimitiveIterator;
+
 
 @Entity
 @Table(name = "client_order")
@@ -15,8 +15,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToMany
-    @JoinTable(name = "order_dish", joinColumns = @JoinColumn(name = "order_id",referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "dish_id",referencedColumnName = "id"))
+    @JoinTable(name = "order_dish", joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "dish_id", referencedColumnName = "id"))
     private List<Dish> dishes = new ArrayList<>();
     private String address;
     private String phoneNumber;
