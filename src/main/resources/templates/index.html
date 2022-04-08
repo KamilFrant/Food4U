@@ -18,6 +18,7 @@
             <h6 th:text="${dish.ingredients}">wołowina 200g, smażony panierowany ser, sałata, pomidor, bekon, cebula,
                 pikle, majonez parmezanowy, sos BBQ</h6>
             <h3 class="price" th:text="${dish.price}">25.25zł</h3>
+            <a th:href="@{/zamowienie/dodaj(dishId=${dish.id})}" class="btn btn-primary" >Zamów</a>
         </div>
     </div>
 </div>
