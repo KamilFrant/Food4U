@@ -4,6 +4,8 @@ import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
 import pl.kfrant.takeaway.dish.Dish;
 
+import java.util.List;
+
 @Service
 public class OrderService {
 
@@ -23,6 +25,14 @@ public class OrderService {
                 .getDishes().stream()
                 .mapToDouble(Dish::getPrice)
                 .sum();
+    }
+
+    public List<Order> findAllOrders(){
+        return orderRepository.findAll();
+    }
+
+    public List<Order> findAllByStatus(OrderStatus status){
+        return orderRepository.findAllByStatus(status);
     }
 
 }
