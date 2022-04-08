@@ -1,24 +1,24 @@
 INSERT INTO
     dish(id, price, name, description, ingredients)
 VALUES
-    (1, 21.21, 'Pizza Domowa', 'Pizza Domowa robiona poza domem',
+    (1, 21.21, 'Pizza Domowa', 'Pizza Domowa robiona poza domem.',
      'ser, sos pomidorowy, pieczarki, szynka'),
-    (2, 22.22, 'Pizza Hawajska', 'Pizza Hawajska to nie pizza',
+    (2, 22.22, 'Pizza Hawajska', 'Pizza Hawajska to nie pizza.',
      'ser, sos pomidorowy, ananas, szynka'),
-    (3, 23.23, 'Pizza Diabelska', 'Pizza ostra jak nóż',
+    (3, 23.23, 'Pizza Diabelska', 'Pizza ostra jak nóż.',
      'ser, sos pomidorowy, salami, czosnek, pepperoni, pieczarki, jalapeno, habanero, piri-piri, pieprz kajeński'),
     (4, 24.24, 'Hamburger Classic', 'Klasyczny burger.',
      'wołowina 200g, ser, sałata, pomidor, ketchup'),
-    (5, 25.25, 'Burger Czeski Zwyrol','Burger robiony specjalnie przez naszego Czeskiego kucharza',
+    (5, 25.25, 'Burger Czeski Zwyrol','Burger robiony specjalnie przez naszego Czeskiego kucharza.',
      'wołowina 200g, smażony panierowany ser, sałata, pomidor, bekon, cebula, pikle, majonez parmezanowy, sos BBQ'),
-    (6, 26.26, 'Burger Italian', 'Burger prosto z Włoch',
-     'wołowina 200g, grillowana spinata, mozzarella fior di latte, rukola, sałata, pesto, pomidor, majonez parmezanowy.'),
-    (7, 27.27, 'Spaghetti Bolognese', 'Prawdziwe Włoskie Spaghetti Bolognese',
+    (6, 26.26, 'Burger Italian', 'Burger prosto z Włoch.',
+     'wołowina 200g, grillowana spinata, mozzarella fior di latte, rukola, sałata, pesto, pomidor, majonez parmezanowy'),
+    (7, 27.27, 'Spaghetti Bolognese', 'Prawdziwe Włoskie Spaghetti Bolognese.',
      'mięso mielone, sos pomidorowy, ser'),
-    (8, 28.28, 'Spaghetti Carbonara', 'Prawdziwe Włoskie Spaghetti Carbonara',
-     'boczek, sos śmietanowy, cebula, pieczarki.'),
-    (9, 29.29, 'Spaghetti alla Spinacio', 'Prawdziwe Włoskie Spaghetti alla Spinacio',
-     'szpinak, cebula, czosnek, sos śmietanowy.');
+    (8, 28.28, 'Spaghetti Carbonara', 'Prawdziwe Włoskie Spaghetti Carbonara.',
+     'boczek, sos śmietanowy, cebula, pieczarki'),
+    (9, 29.29, 'Spaghetti alla Spinacio', 'Prawdziwe Włoskie Spaghetti alla Spinacio.',
+     'szpinak, cebula, czosnek, sos śmietanowy');
 
 
 INSERT INTO
