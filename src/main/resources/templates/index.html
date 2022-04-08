@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Food4Y - Strona główna!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
-$END$
+<div>
+    <div class="header">
+        <h1 class="display-4">Food4Y</h1>
+    </div>
+    <div class="container my-3" >
+        <div class="food" th:each="dish:${dishes}">
+            <h2 th:text="${dish.name}">Burger Czeski Zwyrol</h2>
+            <h5 th:text="${dish.description}">Burger robiony specjalnie przez naszego Czeskiego kucharza</h5>
+            <h6 th:text="${dish.ingredients}">wołowina 200g, smażony panierowany ser, sałata, pomidor, bekon, cebula,
+                pikle, majonez parmezanowy, sos BBQ</h6>
+            <h3 class="price" th:text="${dish.price}">25.25zł</h3>
+        </div>
+    </div>
+</div>
 </body>
 </html>
