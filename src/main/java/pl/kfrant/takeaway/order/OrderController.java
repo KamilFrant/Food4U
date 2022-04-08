@@ -16,12 +16,12 @@ public class OrderController {
 
     private final DishService dishService;
     private final ClientOrder clientOrder;
-    private final OrderRepository orderRepository;
+    private final OrderService orderService;
 
-    public OrderController(DishService dishService, ClientOrder clientOrder, OrderRepository orderRepository) {
+    public OrderController(DishService dishService, ClientOrder clientOrder, OrderService orderService) {
         this.dishService = dishService;
         this.clientOrder = clientOrder;
-        this.orderRepository = orderRepository;
+        this.orderService = orderService;
     }
 
     @GetMapping("/orders/add")
@@ -31,39 +31,23 @@ public class OrderController {
         if(dish.isPresent()) {
             model.addAttribute("message", new Message("Dodano", "Do zamówienia dodano: " + dish.get().getName()));
             model.addAttribute("order",clientOrder.getOrder());
-            model.addAttribute("sum", clientOrder
-                    .getOrder()
-                    .getDishes().stream()
-                    .mapToDouble(Dish::getPrice)
-                    .sum());
+            model.addAttribute("sum", orderService.sumOrderPrice(clientOrder));
         } else {
             model.addAttribute("message", new Message("Nie dodano", "Porano błędne id z menu: " + dishId));
         }
         return "order";
     }
-    @GetMapping("/orders")
-    public String getCurrentOrder(Model model) {
-        model.addAttribute("order", clientOrder.getOrder());
-        model.addAttribute("sum", clientOrder
-                .getOrder()
-                .getDishes().stream()
-                .mapToDouble(Dish::getPrice)
-                .sum());
-        return "order";
-    }
+
     @PostMapping("/orders/realize")
     public String proceedOrder(@RequestParam String address, @RequestParam String phoneNumber, Model model) {
         Order order = clientOrder.getOrder();
         order.setAddress(address);
         order.setPhoneNumber(phoneNumber);
-        orderRepository.save(order);
+        orderService.saveOrder(order);
         clientOrder.clear();
-        model.addAttribute("order", clientOrder.getOrder());model.addAttribute("sum", clientOrder
-                .getOrder()
-                .getDishes().stream()
-                .mapToDouble(Dish::getPrice)
-                .sum());
-        model.addAttribute("message", new Message("Dziękujemy", "Zamówienie przekazane do realizacji"));
+        model.addAttribute("order", clientOrder.getOrder());
+        model.addAttribute("sum", orderService.sumOrderPrice(clientOrder));
+        model.addAttribute("message", new Message("Dziękujemy !", "Zamówienie zostało złożone."));
         return "message";
     }
 
