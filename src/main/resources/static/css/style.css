@@ -15,4 +15,22 @@
     background-color: #fb6100;
     height: 4.5rem;
     color: white;
+
+}
+
+#name{
+    display: inline-flex;
+}
+
+.orders, .home{
+    color: white;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.home-jumbo{
+    background-color:  #fb6100;
+    height: 40%;
+    width: 40%;
+    margin: 10px auto;
 }

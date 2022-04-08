@@ -7,18 +7,23 @@
     <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
-<div >
-    <div class="header">
-        <h1 class="display-4">Food4Y</h1>
+<div>
+    <div class="header" >
+        <div style="display:inline">
+            <h1 class="display-4" id="name">Food4Y</h1>
+            <a class ="home" th:href="@{/}">Strona główna</a>
+            <a class ="orders" th:href="@{/orders}">Zamówienie</a>
+        </div>
     </div>
     <div class="container my-3" >
+
         <div class="food" th:each="dish:${dishes}">
             <h2 th:text="${dish.name}">Burger Czeski Zwyrol</h2>
             <h5 th:text="${dish.description}">Burger robiony specjalnie przez naszego Czeskiego kucharza</h5>
             <h6 th:text="${dish.ingredients}">wołowina 200g, smażony panierowany ser, sałata, pomidor, bekon, cebula,
                 pikle, majonez parmezanowy, sos BBQ</h6>
             <h3 class="price" th:text="${dish.price}">25.25zł</h3>
-            <a th:href="@{/zamowienie/dodaj(dishId=${dish.id})}" class="btn btn-primary" >Zamów</a>
+            <a th:href="@{/orders/add(dishId=${dish.id})}" class="btn btn-primary" >Zamów</a>
         </div>
     </div>
 </div>
