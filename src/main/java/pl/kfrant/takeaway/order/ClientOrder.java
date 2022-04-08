@@ -18,7 +18,6 @@ public class ClientOrder {
         return order;
     }
 
-
     void add(Dish dish) {
         order.getDishes().add(dish);
     }

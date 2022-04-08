@@ -13,9 +13,10 @@
             <h1 class="display-4" id="name">Food4U</h1>
             <a class ="home" th:href="@{/}">Strona główna</a>
             <a class ="orders" th:href="@{/orders}">Zamówienie</a>
+            <a class ="panel" th:href="@{/panel/orders}">Panel zamówień</a>
         </div>
     </div>
-    <div class="jumbotron home-jumbo">
+    <div class="jumbotron home">
         <div class="container text-center text-white jumbo-container">
             <div th:if="${message}" th:remove="tag">
                 <h1 class="display-3" th:text="${message.title}"></h1>

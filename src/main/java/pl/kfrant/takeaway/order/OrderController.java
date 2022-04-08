@@ -38,6 +38,14 @@ public class OrderController {
         return "order";
     }
 
+    @GetMapping("/orders")
+    public String showCurrentOrder(Model model){
+        model.addAttribute("order",clientOrder.getOrder());
+        model.addAttribute("sum", orderService.sumOrderPrice(clientOrder));
+        model.addAttribute("message", new Message("Zamówienie", "Lista dodanych dań" ));
+        return "order";
+    }
+
     @PostMapping("/orders/realize")
     public String proceedOrder(@RequestParam String address, @RequestParam String phoneNumber, Model model) {
         Order order = clientOrder.getOrder();

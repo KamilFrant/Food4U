@@ -22,13 +22,13 @@
     display: inline-flex;
 }
 
-.orders, .home{
+.orders, .home, .panel{
     color: white;
     font-size: 30px;
     margin-left: 20px;
 }
 
-.home-jumbo{
+.home{
     background-color:  #fb6100;
     height: 40%;
     width: 40%;
