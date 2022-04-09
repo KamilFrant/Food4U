@@ -60,6 +60,9 @@
                     th:if="${order.status == T(pl.kfrant.takeaway.order.OrderStatus).ON_THE_WAY}">Zakończ</button>
         </form>
     </div>
+    <div class="text-center" th:if="${order.status == T(pl.kfrant.takeaway.order.OrderStatus).DELIVERED} ">
+        <a class="btn btn-primary" th:href="@{/panel/orders}">Powrót</a>
+    </div>
     <div class="col-12">
         <div th:if="${order.dishes.isEmpty()}" class="text-center">
             <h2>Zamówienie jest puste</h2>
