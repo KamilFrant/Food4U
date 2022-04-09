@@ -3,11 +3,11 @@
 App for ordering takeaway food
 
 # System abilities
-*Display available dishes to order.
-*Placing orders
-*Panel for Employees to display orders 
-*Displaying orders based on the order status
-*Change the status of an order
+* Display available dishes to order.
+* Placing orders
+* Panel for Employees to display orders 
+* Displaying orders based on the order status
+* Change the status of an order
 
 #Database - H2
 Database works on `localhost:8080/h2-console` and JDBC URL: `jdbc:h2:mem:test`
