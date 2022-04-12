@@ -2,6 +2,11 @@
 
 App for ordering takeaway food
 
+# Screenshots
+![1](https://user-images.githubusercontent.com/36209711/163037933-e4de9428-a5eb-4b6e-8b23-d67d71b387a5.PNG)
+![2](https://user-images.githubusercontent.com/36209711/163037975-7e270233-c3ca-4656-b07c-a23b8001f7cc.PNG)
+![3](https://user-images.githubusercontent.com/36209711/163037982-a1fe1f4d-aedc-489f-8a4e-39a43838b5b9.PNG)
+
 # System abilities
 * Display available dishes to order.
 * Placing orders
