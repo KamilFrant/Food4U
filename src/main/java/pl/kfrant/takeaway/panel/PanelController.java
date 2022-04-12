@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.kfrant.takeaway.dish.Dish;
 import pl.kfrant.takeaway.order.Order;
-import pl.kfrant.takeaway.order.OrderRepository;
 import pl.kfrant.takeaway.order.OrderService;
 import pl.kfrant.takeaway.order.OrderStatus;
 
@@ -33,11 +32,8 @@ public class PanelController {
     @GetMapping("/panel/orders/{id}")
     public String showSingleOrder(@PathVariable Long id, Model model) {
         Optional<Order> order = orderService.getOrderById(id);
-        model.addAttribute("order", order);
-        model.addAttribute("sum", order.get().getDishes().stream().mapToDouble(Dish::getPrice).sum());
-        return "panel/order";
-//        return order.map(o -> singleOrderPanel(o, model))
-//                .orElse("redirect:/");
+        return order.map(o -> singleOrderPanel(o, model))
+                .orElse("redirect:/");
     }
 
     @PostMapping("/panel/orders/{id}")
@@ -47,16 +43,13 @@ public class PanelController {
             o.setStatus(OrderStatus.nextStatus(o.getStatus()));
             orderService.setNewStatus(o);
         });
-        model.addAttribute("order", order);
-        model.addAttribute("sum", order.get().getDishes().stream().mapToDouble(Dish::getPrice).sum());
-        return "panel/order";
-//        return order.map(o -> singleOrderPanel(o, model))
-//                .orElse("redirect:/");
+        return order.map(o -> singleOrderPanel(o, model))
+                .orElse("redirect:/");
     }
 
-//    private String singleOrderPanel(Order order, Model model) {
-//        model.addAttribute("order", order);
-//        model.addAttribute("sum", order.getDishes().stream().mapToDouble(Dish::getPrice).sum());
-//        return "panel/order";
-//    }
+    private String singleOrderPanel(Order order, Model model) {
+        model.addAttribute("order", order);
+        model.addAttribute("sum", order.getDishes().stream().mapToDouble(Dish::getPrice).sum());
+        return "panel/order";
+    }
 }
