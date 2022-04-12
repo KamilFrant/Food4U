@@ -34,7 +34,7 @@
                 <th scope="col">Cena</th>
             </tr>
             </thead>
-            <tbody th:remove="all-but-first">
+            <tbody>
             <tr th:each="dish, idx: ${order.dishes}">
                 <th scope="row" th:text="${idx.index+1}">1</th>
                 <td th:text="${dish.name}">Hamburger Classic</td>

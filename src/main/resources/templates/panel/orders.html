@@ -47,7 +47,7 @@
                     <th scope="col">Edycja</th>
                 </tr>
                 </thead>
-                <tbody th:remove="all-but-first">
+                <tbody >
                 <tr th:each="order: ${orders}">
                     <th scope="row" th:text="${order.id}">1</th>
                     <td th:text="${order.address}">ul. Krakowska 43/22, 53-320 Wrocław</td>

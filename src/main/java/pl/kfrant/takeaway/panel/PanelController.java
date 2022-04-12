@@ -16,7 +16,7 @@ import java.util.Optional;
 public class PanelController {
 
     private final OrderService orderService;
-    public PanelController(OrderService orderService, OrderRepository orderRepository) {
+    public PanelController(OrderService orderService) {
         this.orderService = orderService;
     }
 
