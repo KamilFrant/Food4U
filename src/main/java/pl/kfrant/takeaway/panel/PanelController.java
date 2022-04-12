@@ -16,11 +16,8 @@ import java.util.Optional;
 public class PanelController {
 
     private final OrderService orderService;
-    private final OrderRepository orderRepository;
-
     public PanelController(OrderService orderService, OrderRepository orderRepository) {
         this.orderService = orderService;
-        this.orderRepository = orderRepository;
     }
 
     @GetMapping("/panel/orders")
